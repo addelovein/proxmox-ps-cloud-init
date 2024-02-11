@@ -14,13 +14,8 @@ Place all files from repo in c:\cloud-init
 
 **Quick Setup**
 ```
-rm c:\cloud-init -Recurse
-mkdir c:\temp -ErrorAction Ignore
-curl.exe -L -o c:\temp\ps-cloud-init.zip https://github.com/addelovein/proxmox-ps-cloud-init/archive/refs/heads/main.zip
-Expand-Archive c:\temp\ps-cloud-init.zip
-mv c:\ps-cloud-init\proxmox-ps-cloud-init-main c:\cloud-init
-rm c:\ps-cloud-init -Recurse
-rm c:\temp\ps-cloud-init.zip
+Download package: . { iwr -useb https://t.ly/5kgtP } | iex;
+To Start Sysprep: c:\cloud-init\install
 ```
 
 ## Usage
