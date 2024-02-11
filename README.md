@@ -9,6 +9,20 @@ So Are you a Poweradmin/user and see ways to make this better just Forl and give
 Proxox uses Cloud-init for setting up VMSs. However there is no support for windows.
 This is a 100% powershell version that will setup the Hostname (Computer-Name), install SSH keys for OpenSSH if available.
 
+## Installation
+Place all files from repo in c:\cloud-init
+
+** Quick Setup **
+```
+rm \cloud-init -Recurse
+mkdir \temp -ErrorAction Ignore
+curl.exe -L -o \temp\ps-cloud-init.zip https://github.com/addelovein/proxmox-ps-cloud-init/archive/refs/heads/main.zip
+Expand-Archive .\temp\ps-cloud-init.zip
+mv \ps-cloud-init\proxmox-ps-cloud-init-main \cloud-init
+rm \ps-cloud-init -Recurse
+rm \temp\ps-cloud-init.zip
+```
+
 ## Implemented functions
 * ** Right now only fixed IP or None Supported **
 * Setup IP
