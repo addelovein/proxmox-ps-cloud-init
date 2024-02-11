@@ -1,7 +1,7 @@
 # Proxmox Cloud-Init in Powershell
 
 ## Looking for Help!
-I am no Powershell genious, however i started this project due to the lack of a simple Sysprep/Proxmox/cloud-init way. There are existing however none that foxuses soulely on proxmox and there for the projects become to complex.
+I am no Powershell genious, however i started this project due to the lack of a simple Sysprep/Proxmox/cloud-init way. There are existing however none that focuses soulely on proxmox and there for the projects become to complex.
 
 So Are you a Poweradmin/user and see ways to make this better just Forl and give us a PR. (Please document if needed)
 
@@ -24,10 +24,11 @@ rm \temp\ps-cloud-init.zip
 ```
 
 ## Usage
-Powershell scripts placed in the folders **system** or **user** will be run if the start with a numeric value.
+Powershell scripts placed in the folders **system** or **user** will be run if the file name starts with a numeric value.
 The files will be run in the numeric order given.
 If the filename ends with **ALWAYS.ps1** it will be run everytime the computer starts using ScheduledTasks. Otherwise it will only be run firsttime.
-Scripts in system are run by the **SYSTEM** user prelogin. And files placed in **USER** will be run on login.
+Scripts in system are run by the **SYSTEM** user prelogin.
+Scripts placed in **USER** will be run on login by user.
 
 ## Implemented functions
 * **Right now only fixed IP or None Supported**
