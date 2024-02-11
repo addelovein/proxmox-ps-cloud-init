@@ -26,7 +26,7 @@ Scripts in system are run by the **SYSTEM** user prelogin.
 Scripts placed in **USER** will be run on login by user.
 
 ## Implemented functions
-* **Right now only fixed IP or None Supported**
+* **DHCP NOT Supported Yet**
 * Setup IP
 * Setup Gateway
 * Setup Subnetmask
