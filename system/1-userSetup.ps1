@@ -4,25 +4,27 @@
 $UserFile = "c:\cloud-init\username.store"
 $File = "c:\cloud-init\password.store"
 $KeyFile ="c:\cloud-init\key.store"
-$key = Get-Content $KeyFile
-$SECURESTRING_PASSWORD = Get-Content $File | ConvertTo-SecureString -Key $key
-$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($SECURESTRING_PASSWORD)
-$PASSWORD = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
-$USERNAME = Get-Content $UserFile
 
 $filecheck = $UserFile, $File, $KeyFile
 $result = ($filecheck | Test-Path) -notcontains $false
 
 
 if($result){
-    echo "Found Username and Password Files"
+    echo "Found all Username and Password Files"
+
+    $key = Get-Content $KeyFile
+    $SECURESTRING_PASSWORD = Get-Content $File | ConvertTo-SecureString -Key $key
+    $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($SECURESTRING_PASSWORD)
+    $PASSWORD = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+    $USERNAME = Get-Content $UserFile
+    
 
     $USER_NAME = $USERNAME
     $ADMIN_PASS = $PASSWORD
 
     $LOCALUSER = "$HOSTNAME\$USER_NAME"
     $ADMIN_PASSWORD = ConvertTo-SecureString -String $ADMIN_PASS -AsPlainText -Force
-
+    $USER_PASS = $ADMIN_PASS
 
     if ($USER_NAME) {
         $LOCAL_PASSWORD = ConvertTo-SecureString -String $USER_PASS -AsPlainText -Force
