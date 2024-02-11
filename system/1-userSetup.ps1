@@ -50,7 +50,7 @@ if($result){
         Set-ItemProperty $RegPath "DefaultUsername" -Value "$HOSTNAME\$USER_NAME" -type String
         Set-ItemProperty $RegPath "DefaultPassword" -Value "$ADMIN_PASS" -type String
         Set-ItemProperty $RegPath "AutoLogonCount" -Value "1" -type DWord
-        Set-ItemProperty $RegROPath "(Default)" -Value 'c:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe -noexit "c:\cloud-init\cloud-init.user.ps1"' -type String
+        Set-ItemProperty $RegROPath "(Default)" -Value 'c:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe -WindowStyle hidden "c:\cloud-init\cloud-init.user.ps1"' -type String
     }
     rm -Force $File -ErrorAction Ignore 
 }
