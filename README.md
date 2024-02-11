@@ -23,6 +23,12 @@ rm \ps-cloud-init -Recurse
 rm \temp\ps-cloud-init.zip
 ```
 
+## Usage
+Powershell scripts placed in the folders **system** or **user** will be run if the start with a numeric value.
+The files will be run in the numeric order given.
+If the filename ends with **ALWAYS.ps1** it will be run everytime the computer starts using ScheduledTasks. Otherwise it will only be run firsttime.
+Scripts in system are run by the **SYSTEM** user prelogin. And files placed in **USER** will be run on login.
+
 ## Implemented functions
 * **Right now only fixed IP or None Supported**
 * Setup IP

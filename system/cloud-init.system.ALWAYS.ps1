@@ -1,5 +1,6 @@
 # Show ENV For Debug
 Get-Variable -s 0
+whoami
 
 Remove-Item C:\cloud-init\startup.ps1 -ErrorAction Ignore
 Start-Transcript -Path "C:\cloud-init\startup.txt"

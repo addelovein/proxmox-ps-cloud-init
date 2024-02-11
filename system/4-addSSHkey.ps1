@@ -11,7 +11,6 @@ if ($SSH_PUB) {
 #   Get-Service ssh-agent | Set-Service -StartupType Automatic -PassThru | Start-Service
 
     Write-Host "Installing public key to Administrators .ssh folder" -F Blue
-#    Add-Content "$env:USERPROFILE\.ssh\authorized_keys" $SSH_PUB
     Add-Content -Force -Path c:\ProgramData\ssh\administrators_authorized_keys -Value $SSH_PUB;
     icacls.exe "c:\ProgramData\ssh\administrators_authorized_keys" /inheritance:r /grant "Administrators:F" /grant "SYSTEM:F"
 }else{
