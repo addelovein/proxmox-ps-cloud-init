@@ -1,9 +1,9 @@
 # Proxmox Cloud-Init in Powershell
 
 ## Looking for Help!
-I am no Powershell genious, however i started this project due to the lack of a simple Sysprep/Proxmox/cloud-init way. There are existing however none that focuses soulely on proxmox and there for the projects become to complex.
+I am no Powershell genious, however i started this project due to the lack of a simple Sysprep/Proxmox/cloud-init way. There are existing however none that focuses soulely on proxmox and therefor the projects become to complex.
 
-So Are you a Poweradmin/user and see ways to make this better just Forl and give us a PR. (Please document if needed)
+So are You a Poweradmin/user and see ways to make this better just Fork it and give us a PR. (Please document if needed)
 
 ## Introduction
 Proxox uses Cloud-init for setting up VMSs. However there is no support for windows.
