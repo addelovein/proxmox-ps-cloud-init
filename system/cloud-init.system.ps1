@@ -8,7 +8,7 @@ $drive = (Get-Volume -FriendlyName "config-2").DriveLetter
 # Read META_DATA.json and Store as an Object
 $json = Get-Content "$($drive):\OPENSTACK\LATEST\META_DATA.json" | Out-String | ConvertFrom-Yaml
 #$json.uuid
-#$HOSTNAME=$json.hostname
+$HOSTNAME=$json.hostname
 #$ADMIN_PASS=$json.meta.admin_pass
 
 # Open network file referenced in META_DATA

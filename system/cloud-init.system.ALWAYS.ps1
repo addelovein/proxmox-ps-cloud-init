@@ -1,7 +1,6 @@
 # Show ENV For Debug
 gv -s 0
 
-
 Remove-Item C:\cloud-init\startup.ps1 -ErrorAction Ignore
 Start-Transcript -Path "C:\cloud-init\startup.txt"
 $ProgressPreference = 'SilentlyContinue'
@@ -25,13 +24,11 @@ $sn = $file | Select-String -Pattern '(?<=netmask\s)(.*)'
 $dns_nameservers = $file | Select-String -Pattern '(?<=dns_nameservers\s)(.*)'
 $dns_search = $file | Select-String -Pattern '(?<=dns_search\s)(.*)'
 
-
 $IP = $ip.Matches.Groups[1].Value;
 $GATEWAY = $gw.Matches.Groups[1].Value;
 $SUBNET = $sn.Matches.Groups[1].Value;
 $DNS = $dns_nameservers.Matches.Groups[1].Value;
 $DNS_SEARCH = $dns_search.Matches.Groups[1].Value;
-
 
 $yaml = Get-Content "$($drive):\OPENSTACK\LATEST\USER_DATA" | Out-String | ConvertFrom-Yaml
 
