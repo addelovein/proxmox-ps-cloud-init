@@ -4,8 +4,8 @@ Write-Host "Renaming computer"  -F White
 $HOSTNAME=$HOSTNAME -replace '_','-'
 $HOSTNAME=$HOSTNAME.substring(0, [System.Math]::Min(15, $HOSTNAME.Length))
 
-Write-Host "Current HOSTNAME: $(iex hostname)"
+Write-Host "Current HOSTNAME: $(Invoke-Expression hostname)"
 Write-Host "Config  HOSTNAME: $HOSTNAME"
-if((iex hostname) -ne $HOSTNAME){
+if((Invoke-Expression hostname) -ne $HOSTNAME){
     Rename-Computer -NewName $HOSTNAME -ErrorAction Ignore
 }

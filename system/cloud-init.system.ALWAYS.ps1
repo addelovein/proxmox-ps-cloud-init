@@ -1,5 +1,5 @@
 # Show ENV For Debug
-gv -s 0
+Get-Variable -s 0
 
 Remove-Item C:\cloud-init\startup.ps1 -ErrorAction Ignore
 Start-Transcript -Path "C:\cloud-init\startup.txt"
