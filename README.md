@@ -45,7 +45,8 @@ Admin user setup with password is missing this is Due to proxmox suppliyng the p
 Because of this when machine installs first time it will Ask for Administrator Password. 
 
 
-(I do not recomend this therefor I have disabled all functions that rely on this... )
+
+(I do not recomend the patch below therefor I have disabled all functions that rely on this...  But its here if anyone wishes)
 ## Patch Proxmox to use Username/Password
 At : /usr/share/perl5/PVE/API2/Qemu.pm
 
