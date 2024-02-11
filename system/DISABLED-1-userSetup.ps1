@@ -5,7 +5,9 @@ $UserFile = "c:\cloud-init\username.store"
 $File = "c:\cloud-init\password.store"
 $KeyFile ="c:\cloud-init\key.store"
 $key = Get-Content $KeyFile
-$PASSWORD = Get-Content $File | ConvertTo-SecureString -Key $key
+$SECURESTRING_PASSWORD = Get-Content $File | ConvertTo-SecureString -Key $key
+$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($SECURESTRING_PASSWORD)
+$PASSWORD = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
 $USERNAME = Get-Content $UserFile
 
 $filecheck = $UserFile, $File, $KeyFile
