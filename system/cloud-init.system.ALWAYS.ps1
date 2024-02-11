@@ -3,7 +3,7 @@ gv -s 0
 
 
 Remove-Item C:\cloud-init\startup.ps1 -ErrorAction Ignore
-Start-Transcript -Path "C:\cloud-init\startup.txt" -NoClobber
+Start-Transcript -Path "C:\cloud-init\startup.txt"
 $ProgressPreference = 'SilentlyContinue'
 
 # Get Config-2 Drive letter

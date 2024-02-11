@@ -1,5 +1,5 @@
 Remove-Item C:\cloud-init\unattendedlog.ps1 -ErrorAction Ignore
-Start-Transcript -Path "C:\cloud-init\unattendedlog.txt" -NoClobber
+Start-Transcript -Path "C:\cloud-init\unattendedlog.txt"
 $ProgressPreference = 'SilentlyContinue'
 
 # Get Config-2 Drive letter
@@ -8,8 +8,8 @@ $drive = (Get-Volume -FriendlyName "config-2").DriveLetter
 # Read META_DATA.json and Store as an Object
 $json = Get-Content "$($drive):\OPENSTACK\LATEST\META_DATA.json" | Out-String | ConvertFrom-Yaml
 #$json.uuid
-$HOSTNAME=$json.hostname
-$ADMIN_PASS=$json.meta.admin_pass
+#$HOSTNAME=$json.hostname
+#$ADMIN_PASS=$json.meta.admin_pass
 
 # Open network file referenced in META_DATA
 $file = Get-Content "$($drive):\OPENSTACK$($json.network_config.content_path)"
@@ -30,14 +30,14 @@ $DNS_SEARCH = $dns_search.Matches.Groups[1].Value;
 
 # Open Userdata file
 $yaml = Get-Content "$($drive):\OPENSTACK\LATEST\USER_DATA" | Out-String | ConvertFrom-Yaml
-$USER_PASS = $yaml.password
-$USER_NAME = $yaml.users
+#$USER_PASS = $yaml.password
+#$USER_NAME = $yaml.users
 $SSH_PUB = $yaml.ssh_authorized_keys
 
-$USER_NAME=$USER_NAME -replace 'default','Administrator'
+#$USER_NAME=$USER_NAME -replace 'default','Administrator'
 
-$LOCALUSER = "$HOSTNAME\$USER_NAME"
-$ADMIN_PASSWORD = ConvertTo-SecureString -String $ADMIN_PASS -AsPlainText -Force
+#$LOCALUSER = "$HOSTNAME\$USER_NAME"
+#$ADMIN_PASSWORD = ConvertTo-SecureString -String $ADMIN_PASS -AsPlainText -Force
 
 
 

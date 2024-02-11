@@ -25,6 +25,8 @@ Write-Host "Disk expansion"  -F White
 # Windows Recovery Partition is in the way to be able to Extend the main partition so we remove it.
 $RecoveryPartitionID = ((Get-Partition -DiskNumber ((Get-Disk).Number) | Where-Object {$_.Type -eq 'Recovery'}).PartitionNumber)
 if(Is-Numeric($RecoveryPartitionID)) { Remove-Partition -DiskNumber ((Get-Disk).Number) -PartitionNumber $RecoveryPartitionID -PassThru -Confirm:$false }
+$RecoveryPartitionID = ((Get-Partition -DiskNumber ((Get-Disk).Number) | Where-Object {$_.Type -eq 'Unknown'}).PartitionNumber)
+if(Is-Numeric($RecoveryPartitionID)) { Remove-Partition -DiskNumber ((Get-Disk).Number) -PartitionNumber $RecoveryPartitionID -PassThru -Confirm:$false }
 
 
 List-Disks | ForEach-Object {
