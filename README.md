@@ -10,16 +10,21 @@ Proxox uses Cloud-init for setting up VMSs. However there is no support for wind
 This is a 100% powershell version that will setup the Hostname (Computer-Name), install SSH keys for OpenSSH if available.
 
 ## Implemented functions
+* ** Right now only fixed IP or None Supported **
 * Setup IP
 * Setup Gateway
 * Setup Subnetmask
 * Setup SSH Keys
 * Extend Disk
 
+## Todo
+* Fix if user wants DHCP
+* A Network required section So the script will check for network connection if its found it will run a cloud-init.network.ps1
+* Multiple Network Adapters
+
 ## Missing functions
 Admin user setup with password is missing this is Due to proxmox suppliyng the password in a SHA hash where Windows would need it in cleartext.
-
-This has made us disable all scripts that depend on running as User and not system.
+Because of this when machine installs first time it will Ask for Administrator Password. 
 
 
 ## Patch Proxmox to use Username/Password
