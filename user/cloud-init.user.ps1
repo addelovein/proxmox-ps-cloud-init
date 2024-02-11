@@ -1,5 +1,5 @@
-Remove-Item C:\cloud-init\userlog.ps1 -ErrorAction Ignore
-Start-Transcript -Path "C:\cloud-init\userlog.txt"
+#Remove-Item C:\cloud-init\userlog.ps1 -ErrorAction Ignore
+Start-Transcript -Path "C:\cloud-init\user.once.txt"
 
 whoami
 

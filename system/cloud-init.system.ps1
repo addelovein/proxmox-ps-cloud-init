@@ -1,5 +1,5 @@
-Remove-Item C:\cloud-init\unattendedlog.ps1 -ErrorAction Ignore
-Start-Transcript -Path "C:\cloud-init\unattendedlog.txt"
+#Remove-Item C:\cloud-init\unattendedlog.ps1 -ErrorAction Ignore
+Start-Transcript -Path "C:\cloud-init\system.txt"
 $ProgressPreference = 'SilentlyContinue'
 
 # Get Config-2 Drive letter

@@ -28,7 +28,7 @@
       <RunSynchronous>
         <RunSynchronousCommand wcm:action="add">
           <Order>1</Order>
-          <Path>Powershell.exe /W Normal -ExecutionPolicy ByPass -File "c:\cloud-init\system\cloud-init.system.ps1"</Path>
+          <Path>Powershell.exe /W Normal -ExecutionPolicy ByPass -WindowStyle hidden -File "c:\cloud-init\system\cloud-init.system.ps1"</Path>
           <Description>Itea Script</Description>
           <WillReboot>Never</WillReboot>
         </RunSynchronousCommand>
