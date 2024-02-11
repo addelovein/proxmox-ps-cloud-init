@@ -38,6 +38,7 @@ Scripts placed in **USER** will be run on login by user.
 * Fix if user wants DHCP
 * A Network required section So the script will check for network connection if its found it will run a cloud-init.network.ps1
 * Multiple Network Adapters
+* Update files when newer release available
 
 ## Missing functions
 Admin user setup with password is missing this is Due to proxmox suppliyng the password in a SHA hash where Windows would need it in cleartext.
