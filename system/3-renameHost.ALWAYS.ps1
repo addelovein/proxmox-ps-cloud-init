@@ -7,6 +7,5 @@ $HOSTNAME=$HOSTNAME.substring(0, [System.Math]::Min(15, $HOSTNAME.Length))
 Write-Host "Current HOSTNAME: $(iex hostname)"
 Write-Host "Config  HOSTNAME: $HOSTNAME"
 if((iex hostname) -ne $HOSTNAME){
-    Rename-Computer -NewName $HOSTNAME -ErrorAction Ignore -Confirm $false
-    shutdown.exe -r -t 45 /c "The computer will RESTART in 45 seconds due to COMPUTERNAME change."
+    Rename-Computer -NewName $HOSTNAME -ErrorAction Ignore
 }
