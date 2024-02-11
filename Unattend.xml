@@ -20,20 +20,6 @@
       <RegisteredOrganization>ITEAPRO AB</RegisteredOrganization>
       <RegisteredOwner>ADDE</RegisteredOwner>
       <DisableAutoDaylightTimeSet>false</DisableAutoDaylightTimeSet>
-      <FirstLogonCommands>
-          <SynchronousCommand wcm:action="add">
-              <Description>Run Cloud-Init User Scripts</Description>
-              <Order>1</Order>
-              <CommandLine>Powershell.exe /W Normal -ExecutionPolicy ByPass -File "c:\cloud-init\user\cloud-init.user.ps1"</CommandLine>
-              <RequiresUserInput>false</RequiresUserInput>
-          </SynchronousCommand>
-          <SynchronousCommand wcm:action="add">
-              <Order>3</Order>
-              <CommandLine>shutdown.exe -r -t 30 /c "The computer will RESTART in 30 seconds"</CommandLine>
-              <Description>Reboot at end</Description>
-              <RequiresUserInput>false</RequiresUserInput>
-          </SynchronousCommand>
-      </FirstLogonCommands>
       <TimeZone>W. Europe Standard Time</TimeZone>       
     </component>
   </settings>

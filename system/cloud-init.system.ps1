@@ -34,24 +34,10 @@ $yaml = Get-Content "$($drive):\OPENSTACK\LATEST\USER_DATA" | Out-String | Conve
 $USER_NAME = $yaml.users
 $SSH_PUB = $yaml.ssh_authorized_keys
 
-#$USER_NAME=$USER_NAME -replace 'default','Administrator'
-
-
-
+$USER_NAME=$USER_NAME -replace 'default','Administrator'
 
 #Write-Host "Creating User Credential"
 #$USER_CREDENTIAL = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $USER_NAME, $ADMIN_PASSWORD
-
-#---------- ALL FILES READ AND COMPLETE --------------------------
-# Auto-login
-#$RegPath = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon"
-#$RegROPath = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce"
-#Set-ItemProperty $RegPath "AutoAdminLogon" -Value "1" -type String  
-#Set-ItemProperty $RegPath "DefaultUsername" -Value "$HOSTNAME\$USER_NAME" -type String
-#Set-ItemProperty $RegPath "DefaultPassword" -Value "$USER_PASS" -type String
-#Set-ItemProperty $RegPath "AutoLogonCount" -Value "1" -type DWord
-#Set-ItemProperty $RegROPath "(Default)" -Value 'c:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe -noexit "c:\cloud-init\cloud-init.user.ps1"' -type String
-
 
 Get-ChildItem "c:\cloud-init\system\[0-9]*.ps1"  | ForEach-Object { 
 	Write-Host ""
