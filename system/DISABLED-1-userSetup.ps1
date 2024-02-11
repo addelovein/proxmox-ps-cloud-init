@@ -7,8 +7,7 @@ $KeyFile ="c:\cloud-init\key.store"
 $key = Get-Content $KeyFile
 $PASSWORD = Get-Content $File | ConvertTo-SecureString -Key $key
 $USERNAME = Get-Content $UserFile
-$USERNAME
-$PASSWORD
+
 $filecheck = $UserFile, $File, $KeyFile
 $result = ($filecheck | Test-Path) -notcontains $false
 
