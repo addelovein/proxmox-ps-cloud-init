@@ -31,13 +31,11 @@ $DNS_SEARCH = $dns_search.Matches.Groups[1].Value;
 # Open Userdata file
 $yaml = Get-Content "$($drive):\OPENSTACK\LATEST\USER_DATA" | Out-String | ConvertFrom-Yaml
 #$USER_PASS = $yaml.password
-#$USER_NAME = $yaml.users
+$USER_NAME = $yaml.users
 $SSH_PUB = $yaml.ssh_authorized_keys
 
 #$USER_NAME=$USER_NAME -replace 'default','Administrator'
 
-#$LOCALUSER = "$HOSTNAME\$USER_NAME"
-#$ADMIN_PASSWORD = ConvertTo-SecureString -String $ADMIN_PASS -AsPlainText -Force
 
 
 
